@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AIih 2026 | Multimodal dentistry workshop",
+  title: "Radiograph Ready | Dental AI quality benchmark",
   description:
-    "An invitation to the AIih 2026 workshop on trustworthy multimodal AI for dental radiographic quality assessment.",
+    "Radiograph Ready is a pilot benchmark for trustworthy multimodal AI assessment of dental radiograph quality before diagnosis.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

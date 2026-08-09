@@ -1,7 +1,7 @@
-# AIih 2026 workshop invitation
+# Radiograph Ready
 
-Single-page invitation site for the AIih 2026 workshop on trustworthy
-multimodal AI for dental radiographic quality assessment.
+Single-page research site for Radiograph Ready, a pilot benchmark exploring
+whether multimodal AI can assess dental radiograph usability before diagnosis.
 
 The site includes:
 
@@ -12,4 +12,14 @@ The site includes:
 
 The contribution form is intentionally a front-end handoff for now. It
 prepares an email conversation and does not transmit files; connect it to an
-approved secure upload endpoint before public launch.
+approved secure upload endpoint before accepting real patient data.
+
+## Local development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+The public site is deployed automatically to GitHub Pages from the `main`
+branch.

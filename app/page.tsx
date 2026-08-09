@@ -50,12 +50,12 @@ export default function Home() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const subject = encodeURIComponent("AIih 2026 workshop contribution");
+    const subject = encodeURIComponent("Radiograph Ready contribution");
     const fileNames = files.length
       ? files.map((file) => file.name).join(", ")
       : "None yet";
     const body = encodeURIComponent(
-      "I would like to contribute to the AIih 2026 workshop.\n\n" +
+      "I would like to contribute to the Radiograph Ready benchmark.\n\n" +
         "Files selected: " +
         fileNames +
         "\n\nI understand that data should be de-identified before sharing.",
@@ -75,14 +75,14 @@ export default function Home() {
   return (
     <main>
       <nav className="site-nav" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="AIih 2026 home">
+        <a className="brand" href="#top" aria-label="Radiograph Ready home">
           <span className="brand-mark" aria-hidden="true">
             <span />
             <span />
             <span />
           </span>
           <span>
-            <strong>AIih</strong> <em>/ 26</em>
+            <strong>Radiograph</strong> <em>READY</em>
           </span>
         </a>
         <div className="nav-links">
@@ -97,7 +97,7 @@ export default function Home() {
 
       <section className="hero section-pad" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="eyebrow-dot" /> AIih 2026 / Workshop invitation</p>
+          <p className="eyebrow"><span className="eyebrow-dot" /> Radiograph Ready / Research benchmark</p>
           <h1>
             Can vision-language models tell when a dental radiograph is{" "}
             <span className="highlight">ready to trust?</span>
@@ -302,7 +302,7 @@ export default function Home() {
       <footer className="site-footer">
         <a className="brand" href="#top" aria-label="Back to top">
           <span className="brand-mark" aria-hidden="true"><span /><span /><span /></span>
-          <span><strong>AIih</strong> <em>/ 26</em></span>
+          <span><strong>Radiograph</strong> <em>READY</em></span>
         </a>
         <p>Trustworthy multimodal AI for dental imaging.</p>
         <a href="#top">Back to top <span aria-hidden="true">↑</span></a>

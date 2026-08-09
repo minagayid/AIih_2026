@@ -13,13 +13,13 @@ async function render() {
   );
 }
 
-test("renders the AIih workshop invitation", async () => {
+test("renders the Radiograph Ready research site", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /AIih 2026/i);
+  assert.match(html, /Radiograph Ready/i);
   assert.match(html, /Can vision-language models tell when a dental radiograph/i);
   assert.match(html, /Quick review/i);
   assert.match(html, /Prepare contribution/i);
