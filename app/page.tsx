@@ -245,30 +245,28 @@ export default function Home() {
               <span><i>03</i> Research feedback and collaboration</span>
             </div>
           </div>
-          <form className="contribute-form" onSubmit={handleSubmit}>
-            <div className="form-heading"><span>Contribution handoff</span><span className="form-status-dot" /></div>
-            <label className="file-dropzone" htmlFor="xray-files">
-              <span className="upload-symbol" aria-hidden="true">＋</span>
-              <strong>Choose X-ray files</strong>
-              <span>PNG, JPG, WEBP, DICOM or ZIP</span>
-              <input id="xray-files" name="xray-files" type="file" accept="image/png,image/jpeg,image/webp,.dcm,.zip" multiple onChange={handleFileChange} />
-            </label>
-            {files.length > 0 && (
-              <div className="file-list" aria-live="polite">
-                {files.map((file) => (
-                  <div key={file.name + "-" + file.size}>
-                    <span>{file.name}</span>
-                    <button type="button" onClick={() => removeFile(file.name)} aria-label={"Remove " + file.name}>×</button>
-                  </div>
-                ))}
-              </div>
-            )}
-            <label className="field-label" htmlFor="contributor-email">Your email (optional)</label>
-            <input className="text-input" id="contributor-email" type="email" placeholder="name@institution.org" />
-            <button className="button button-submit" type="submit">Prepare contribution <span aria-hidden="true">↗</span></button>
-            <p className="privacy-note"><span aria-hidden="true">✳</span> Please remove patient names, IDs, dates of birth, and metadata before sharing. This page prepares an email handoff; files are not uploaded until a secure endpoint is connected.</p>
-            {status && <p className="form-status" role="status">{status}</p>}
-          </form>
+          <div className="contribute-form google-form-container">
+          <div className="form-heading">
+            <span>Contribute to the benchmark</span>
+            <span className="form-status-dot" />
+          </div>
+
+          <div className="google-form-wrapper">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfUtFp47C4bpFCPCkZH_zRvaU_kTR8q58LbGDvBUxG8LfzSyQ/viewform?embedded=true"
+              title="Radiograph Ready contribution form"
+              loading="lazy"
+            >
+              Loading…
+            </iframe>
+          </div>
+
+          <p className="privacy-note">
+            <span aria-hidden="true">✳</span>{" "}
+            Please submit only de-identified radiographs. Remove patient names,
+            IDs, dates of birth, and identifying metadata before sharing.
+          </p>
+        </div>
         </div>
       </section>
 
