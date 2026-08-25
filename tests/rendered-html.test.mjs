@@ -22,7 +22,7 @@ test("renders the Radiograph Ready research site", async () => {
   assert.match(html, /Radiograph Ready/i);
   assert.match(html, /Can vision-language models tell when a dental radiograph/i);
   assert.match(html, /Quick review/i);
-  assert.match(html, /Prepare contribution/i);
+  assert.match(html, /Contribute to the benchmark/i);
   assert.match(html, /ashhadulislam@gmail\.com/i);
   assert.match(html, /minagayid@gmail\.com/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);

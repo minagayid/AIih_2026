@@ -1,7 +1,3 @@
-"use client";
-
-import { ChangeEvent, FormEvent, useState } from "react";
-
 const modelScores = [
   { name: "Gemini 3.1 Flash Lite", score: 93, stat: "0.93 Spearman" },
   { name: "Gemini 3.5 Flash", score: 92, stat: "2.08 MAE" },
@@ -35,43 +31,6 @@ const authors = [
 ];
 
 export default function Home() {
-  const [files, setFiles] = useState<File[]>([]);
-  const [status, setStatus] = useState("");
-
-  function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
-    const selected = Array.from(event.target.files ?? []);
-    setFiles(selected);
-    setStatus("");
-  }
-
-  function removeFile(fileName: string) {
-    setFiles((current) => current.filter((file) => file.name !== fileName));
-  }
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const subject = encodeURIComponent("Radiograph Ready contribution");
-    const fileNames = files.length
-      ? files.map((file) => file.name).join(", ")
-      : "None yet";
-    const body = encodeURIComponent(
-      "I would like to contribute to the Radiograph Ready benchmark.\n\n" +
-        "Files selected: " +
-        fileNames +
-        "\n\nI understand that data should be de-identified before sharing.",
-    );
-    setStatus(
-      files.length
-        ? "Your files are ready to share. Your email app will open next; please attach the selected files there."
-        : "Your message is ready. Please use the email link to start a contribution conversation.",
-    );
-    window.location.href =
-      "mailto:ashhadulislam@gmail.com,minagayid@gmail.com?subject=" +
-      subject +
-      "&body=" +
-      body;
-  }
-
   return (
     <main>
       <nav className="site-nav" aria-label="Main navigation">
