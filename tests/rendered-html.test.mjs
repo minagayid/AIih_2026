@@ -30,5 +30,7 @@ test("renders the Radiograph Ready research site", async () => {
   assert.match(html, /Radiograph Ready research team/i);
   assert.match(html, /property="og:image"/i);
   assert.match(html, /name="twitter:image"/i);
+  assert.match(html, /name="google-site-verification"/i);
+  assert.match(html, /content="ha-tm7yeQYXIPwMPSd0jlXRZToyQhWpGTgxe2kwbnCk"/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });

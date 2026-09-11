@@ -95,6 +95,9 @@ export const metadata: Metadata = {
   ],
   creator: "Ashhadul Islam and Mina Maged Zekry Gayid",
   publisher: siteName,
+  verification: {
+    google: "ha-tm7yeQYXIPwMPSd0jlXRZToyQhWpGTgxe2kwbnCk",
+  },
   alternates: {
     canonical: "/",
   },

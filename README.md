@@ -18,9 +18,9 @@ approved secure upload endpoint before accepting real patient data.
 
 The site includes a canonical URL, descriptive Open Graph and X metadata,
 research-project structured data, a crawlable **robots.txt**, and a sitemap
-for the GitHub Pages URL, plus a branded **og.png** social-preview image. No
-search-console verification token is included; add one only in the hosting
-account that owns the site.
+for the GitHub Pages URL, plus a branded **og.png** social-preview image. The
+Google Search Console token uses the free HTML-tag method; keep it in the site
+head so ownership remains verified.
 
 ## Contributor email automation
 
