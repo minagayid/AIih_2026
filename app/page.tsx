@@ -77,7 +77,11 @@ export default function Home() {
           <p className="hero-note">A pilot study by Ashhadul Islam &amp; Mina Maged Zekry Gayid</p>
         </div>
 
-        <div className="hero-visual" aria-label="Abstract dental radiograph quality study graphic">
+        <div
+          className="hero-visual"
+          role="img"
+          aria-label="Abstract dental radiograph quality study graphic"
+        >
           <div className="visual-stamp">MULTIMODAL<br />DENTISTRY</div>
           <div className="visual-topline">
             <span>FIG. 01</span>

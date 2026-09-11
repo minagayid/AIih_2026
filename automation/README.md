@@ -11,6 +11,10 @@ The included **google-apps-script.gs** sends:
   a valid email address; and
 - a clear promise to follow up within seven business days.
 
+It also includes an optional **sendThankYouForSelectedRow** helper for sending
+the acknowledgement once to an existing response, after checking that the
+contributor has not already received one.
+
 ## One-time setup
 
 1. Open the Google Sheet connected to the contribution form.
@@ -26,6 +30,11 @@ The owner addresses and the seven-business-day promise are at the top of the
 script in **CONFIG**. Change them there if the project team or response
 window changes. The script does not require an API key or a third-party email
 provider; messages are sent by the Google account that authorizes the trigger.
+
+For a past contributor, select that response row in the sheet and run
+**sendThankYouForSelectedRow** once. Do not use it for a row that has already
+received an acknowledgement, because the helper intentionally does not keep a
+second-send log.
 
 Because contributor responses may relate to dental imaging, keep the form
 limited to de-identified material and do not add patient identifiers to the

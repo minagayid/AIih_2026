@@ -26,16 +26,24 @@ const structuredData = {
       name: siteName,
       description: siteDescription,
       areaOfStudy: "Dentistry",
+      keywords: [
+        "dental radiograph quality",
+        "multimodal AI",
+        "vision-language models",
+        "dental imaging",
+      ],
       creator: [
         {
           "@type": "Person",
           name: "Ashhadul Islam",
           url: "https://ashhadulislam.github.io/",
+          sameAs: "https://www.linkedin.com/in/ashhadul-islam-b508581a/",
         },
         {
           "@type": "Person",
           name: "Mina Maged Zekry Gayid",
           url: "https://minagayid.github.io/",
+          sameAs: "https://www.linkedin.com/in/mina-maged-zekry-gayid/",
         },
       ],
     },
@@ -44,6 +52,7 @@ const structuredData = {
       "@id": siteRoot + "#organization",
       name: "Radiograph Ready research team",
       url: siteRoot,
+      sameAs: "https://github.com/minagayid/AIih_2026",
       member: [
         { "@type": "Person", name: "Ashhadul Islam" },
         { "@type": "Person", name: "Mina Maged Zekry Gayid" },

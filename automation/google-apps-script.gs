@@ -40,7 +40,9 @@ function installTrigger() {
   const triggerExists = ScriptApp.getProjectTriggers().some(
     (trigger) =>
       trigger.getHandlerFunction() === "onFormSubmit" &&
-      trigger.getEventType() === ScriptApp.EventType.ON_FORM_SUBMIT,
+      trigger.getEventType() === ScriptApp.EventType.ON_FORM_SUBMIT &&
+      trigger.getTriggerSource() === ScriptApp.TriggerSource.SPREADSHEETS &&
+      trigger.getTriggerSourceId() === spreadsheet.getId(),
   );
 
   if (!triggerExists) {
@@ -69,6 +71,47 @@ function onFormSubmit(event) {
   if (submission.email) {
     sendContributorThankYou_(submission);
   }
+}
+
+/**
+ * Optional manual helper for an existing response.
+ *
+ * Select any completed response row in the linked sheet, then run this
+ * function once. Use it only when that contributor has not already received
+ * an acknowledgement.
+ */
+function sendThankYouForSelectedRow() {
+  const spreadsheet = SpreadsheetApp.getActive();
+  const sheet = spreadsheet.getActiveSheet();
+  const selectedRange = sheet.getActiveRange();
+  const row = selectedRange ? selectedRange.getRow() : 0;
+  const columnCount = sheet.getLastColumn();
+
+  if (row < 2 || columnCount < 1) {
+    throw new Error("Select a completed response row before running this function.");
+  }
+
+  const headers = sheet.getRange(1, 1, 1, columnCount).getValues()[0];
+  const values = sheet.getRange(row, 1, 1, columnCount).getValues()[0];
+  const namedValues = {};
+
+  headers.forEach((header, index) => {
+    if (header) {
+      namedValues[String(header)] = [values[index]];
+    }
+  });
+
+  const submission = normalizeSubmission_({
+    namedValues,
+    range: sheet.getRange(row, 1, 1, columnCount),
+  });
+
+  if (!submission.email) {
+    throw new Error("The selected response row does not contain a valid email address.");
+  }
+
+  sendContributorThankYou_(submission);
+  SpreadsheetApp.getUi().alert("Thank-you email sent to " + submission.email + ".");
 }
 
 function normalizeSubmission_(event) {
