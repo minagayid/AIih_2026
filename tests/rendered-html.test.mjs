@@ -28,5 +28,7 @@ test("renders the Radiograph Ready research site", async () => {
   assert.match(html, /rel="canonical"/i);
   assert.match(html, /application\/ld\+json/i);
   assert.match(html, /Radiograph Ready research team/i);
+  assert.match(html, /property="og:image"/i);
+  assert.match(html, /name="twitter:image"/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });

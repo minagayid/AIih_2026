@@ -6,6 +6,13 @@ const siteRoot = siteUrl + "/";
 const siteName = "Radiograph Ready";
 const siteDescription =
   "Radiograph Ready is an open pilot benchmark for trustworthy multimodal AI assessment of dental radiograph quality before diagnosis.";
+const socialImage = {
+  url: "/og.png",
+  width: 1730,
+  height: 909,
+  type: "image/png",
+  alt: "Radiograph Ready — Dental radiograph quality benchmark for trustworthy multimodal AI",
+};
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -98,11 +105,13 @@ export const metadata: Metadata = {
     title: "Radiograph Ready | Dental AI quality benchmark",
     description: siteDescription,
     locale: "en_US",
+    images: [socialImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Radiograph Ready | Dental AI quality benchmark",
     description: siteDescription,
+    images: [socialImage.url],
   },
   robots: {
     index: true,
