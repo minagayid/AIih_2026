@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minagayid.github.io/AIih_2026/sitemap.xml

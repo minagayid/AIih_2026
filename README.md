@@ -14,6 +14,21 @@ The contribution form is intentionally a front-end handoff for now. It
 prepares an email conversation and does not transmit files; connect it to an
 approved secure upload endpoint before accepting real patient data.
 
+## Search visibility
+
+The site includes a canonical URL, descriptive Open Graph and X metadata,
+research-project structured data, a crawlable **robots.txt**, and a sitemap
+for the GitHub Pages URL. No search-console verification token is included;
+add one only in the hosting account that owns the site.
+
+## Contributor email automation
+
+The **automation** folder contains a Google Apps Script for the linked
+response sheet. After the one-time setup, each new form submission sends the
+two owners the contributor details and sends the contributor a friendly
+acknowledgement with a promise to follow up within seven business days. The
+script skips the acknowledgement when no valid contributor email is present.
+
 ## Local development
 
 ```bash
