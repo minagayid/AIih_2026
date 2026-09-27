@@ -1,0 +1,64 @@
+{
+  "dataset": {
+    "worksheet": "Images",
+    "scored_image_rows": 810,
+    "exact_unique_images": 797,
+    "embedded_image_dimensions": {
+      "112x150": 498,
+      "150x113": 312
+    },
+    "model_rating_columns": 7,
+    "rating_scale_documented_in_source": false,
+    "expert_reference_scores_present": false
+  },
+  "target": "Arithmetic mean of the seven supplied model ratings per exact-unique image; weak label only.",
+  "model": {
+    "type": "Ridge regression",
+    "input": "49 handcrafted grayscale, histogram, and image-quality features from a 96x96 resize",
+    "feature_count": 49,
+    "seed": 20260927,
+    "selected_alpha_on_full_data": 100.0,
+    "full_data_selection_mae_by_alpha": {
+      "0.1": 0.7261456370662827,
+      "1.0": 0.7237829090138383,
+      "10.0": 0.7151233692064074,
+      "100.0": 0.7061698539138052
+    }
+  },
+  "model_rating_agreement": {
+    "mean_pairwise_spearman": 0.33214706520106646,
+    "median_pairwise_spearman": 0.1019143992920964,
+    "pair_count": 21
+  },
+  "cross_validation": {
+    "method": "Nested grouped cross-validation by exact image SHA-256",
+    "outer_folds": 5,
+    "alpha_candidates": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "selected_alpha_by_outer_fold": [
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "model_mae": 0.7044051058944139,
+    "mean_baseline_mae": 0.7723604892542861,
+    "model_rmse": 0.879327846191326,
+    "mean_baseline_rmse": 0.9436571150790364,
+    "model_spearman_vs_weak_target": 0.3805893532934701,
+    "r2_vs_weak_target": 0.13020328065656184
+  },
+  "limitations": [
+    "No expert reference scores were present; validation measures reproduction of model-generated ratings only.",
+    "The workbook did not document a rating scale or scoring rubric.",
+    "The workbook schema had no patient identifiers, so patient-level separation could not be verified.",
+    "Images were embedded at thumbnail dimensions, not clinical acquisition resolution.",
+    "Exact byte-identical images were aggregated before training; near-duplicates and same-patient images were not independently verified.",
+    "This exploratory model is not validated for diagnosis, retake decisions, or clinical use."
+  ]
+}

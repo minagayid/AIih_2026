@@ -5,7 +5,8 @@ const siteUrl = "https://minagayid.github.io/AIih_2026";
 const siteRoot = siteUrl + "/";
 const siteName = "Radiograph Ready";
 const siteDescription =
-  "Radiograph Ready is an open pilot benchmark for trustworthy multimodal AI assessment of dental radiograph quality before diagnosis.";
+  "Research on AI for dental X-ray quality: an 810-row model-rated dataset, an exploratory image-feature baseline, and a separate 13-image expert-scored pilot.";
+const pageTitle = "Dental X-ray Quality AI Research | Radiograph Ready";
 const socialImage = {
   url: "/og.png",
   width: 1730,
@@ -30,14 +31,15 @@ const structuredData = {
       "@type": "ResearchProject",
       "@id": siteRoot + "#research-project",
       url: siteRoot,
-      name: siteName,
+      name: "Radiograph Ready: Dental X-ray Quality AI Research",
       description: siteDescription,
       areaOfStudy: "Dentistry",
       keywords: [
+        "dental X-ray image quality",
         "dental radiograph quality",
-        "multimodal AI",
-        "vision-language models",
-        "dental imaging",
+        "AI for dental imaging",
+        "vision-language models in dentistry",
+        "exploratory machine learning",
       ],
       creator: [
         {
@@ -71,17 +73,18 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteRoot),
   title: {
-    default: "Radiograph Ready | Dental AI quality benchmark",
+    default: pageTitle,
     template: "%s | Radiograph Ready",
   },
   description: siteDescription,
   applicationName: siteName,
   keywords: [
+    "dental X-ray image quality",
     "dental radiograph quality",
-    "dental imaging AI",
-    "multimodal AI dentistry",
-    "vision-language models",
-    "radiograph usability benchmark",
+    "AI for dental imaging",
+    "vision-language models in dentistry",
+    "radiograph quality assessment",
+    "exploratory machine learning",
   ],
   authors: [
     {
@@ -105,14 +108,14 @@ export const metadata: Metadata = {
     type: "website",
     url: siteRoot,
     siteName,
-    title: "Radiograph Ready | Dental AI quality benchmark",
+    title: pageTitle,
     description: siteDescription,
     locale: "en_US",
     images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Radiograph Ready | Dental AI quality benchmark",
+    title: pageTitle,
     description: siteDescription,
     images: [socialImage.url],
   },

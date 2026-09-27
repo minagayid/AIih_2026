@@ -164,8 +164,7 @@ h1 { max-width: 650px; font-size: clamp(48px, 6.3vw, 84px); font-weight: 800; }
 .model-row { display: flex; align-items: center; gap: 0; min-height: 65px; border-top: 1px solid var(--line); }
 .model-name { width: 42%; display: flex; align-items: center; gap: 12px; font-size: 13px; }
 .model-index { color: var(--coral); font-family: "Courier New", Courier, monospace; font-size: 10px; }
-.score-track { width: 34%; height: 7px; overflow: hidden; border-radius: 999px; background: rgba(16, 33, 31, 0.12); }
-.score-track span { height: 100%; display: block; border-radius: inherit; background: var(--ink); }
+.model-value { width: 34%; color: var(--ink-soft); font-family: "Courier New", Courier, monospace; font-size: 12px; }
 .model-stat { width: 24%; color: var(--ink-soft); font-family: "Courier New", Courier, monospace; font-size: 10px; text-align: right; }
 .board-footnote { margin-top: 19px; color: var(--ink-soft); font-family: "Courier New", Courier, monospace; font-size: 10px; line-height: 1.5; }
 
@@ -259,8 +258,7 @@ h1 { max-width: 650px; font-size: clamp(48px, 6.3vw, 84px); font-weight: 800; }
   .board-header { font-size: 8px; }
   .model-row { min-height: 78px; flex-wrap: wrap; padding: 12px 0; }
   .model-name { width: 100%; margin-bottom: 8px; }
-  .score-track { width: 63%; }
-  .model-stat { width: 37%; }
+  .model-value, .model-stat { width: 50%; }
   .criterion { min-height: 72px; grid-template-columns: 37px 1fr 25px; }
   .criterion strong { font-size: 15px; }
   .contribute { width: 100%; padding-right: 17px; padding-left: 17px; }
