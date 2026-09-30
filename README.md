@@ -56,3 +56,7 @@ pnpm dev
 
 The public site is deployed automatically to GitHub Pages from the `main`
 branch.
+
+## Agent evaluation roadmap
+
+See [evaluation contracts and evidence gates](docs/evaluation-roadmap.md) and [Agent Eval Lab](https://github.com/minagayid/agent-eval-lab).
